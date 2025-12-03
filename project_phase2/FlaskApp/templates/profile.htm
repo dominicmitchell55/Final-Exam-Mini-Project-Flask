@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <title>Profile</title>
+    <style type="text/css">
+        body { background-color: lightcyan; }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Profile information:</legend>
+
+        <form action="" method="post">
+            <p>
+                Please <strong>update</strong> your profile information on the following form <br>
+                <em>All fields are required and must contain valid information</em>
+            </p>
+
+            <table border="1" style="width:600px; table-layout:fixed;">
+                <colgroup>
+                    <col style="width:120px;">
+                    <col style="width:auto;">
+                </colgroup>
+
+                <tr>
+                    <td>Member ID:</td>
+
+                    <td><input type="text" name="memberID" value="{{memberID}}" readonly /></td>
+                </tr>
+
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" name="firstname" value="{{firstname}}" /></td>
+                </tr>
+
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" name="lastname" value="{{lastname}}" /></td>
+                </tr>
+
+                <tr>
+                    <td>Age:</td>
+                    <td><input type="text" name="age" value="{{age}}" /></td>
+                </tr>
+
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" name="email" value="{{email}}" /></td>
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <img src="{{ url_for('static', filename='ej_headshot.png') }}"
+                             width="110" height="130" alt="Profile photo" />
+                    </td>
+                    <td>
+                        <textarea name="bio"
+                                  style="height:130px; width:100%; box-sizing:border-box;">{{bio}}</textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Click to Update" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+    <br>
+<a href ="/view_all_celebs"> Click to view all of the celebrities </a>
+
+</body>
+</html>
